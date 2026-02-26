@@ -1,0 +1,13 @@
+{
+  "name": "react-todo-localstorage",
+  "version": "1.0.0",
+  "private": true,
+  "description": "一个使用 React + 本地存储的简洁待办事项应用（纯静态页面版）。",
+  "scripts": {
+    "start": "npx serve .",
+    "preview": "npx serve ."
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}
+
