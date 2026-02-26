@@ -712,12 +712,6 @@
           setTodos([]);
         };
 
-        const handleKeyDown = (e) => {
-          if (e.key === "Enter" && (e.metaKey || e.ctrlKey)) {
-            handleAdd(e);
-          }
-        };
-
         return (
           <div className="app-shell">
             <div className="card">
@@ -740,7 +734,6 @@
                   placeholder="输入待办事项，例如：晚上 8 点跑步 30 分钟"
                   value={input}
                   onChange={(e) => setInput(e.target.value)}
-                  onKeyDown={handleKeyDown}
                   maxLength={120}
                 />
 
@@ -794,20 +787,15 @@
                     未完成 {stats.uncompleted}
                   </span>
                 </div>
-                <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-                  <span className="hint">
-                    支持 <strong>回车键</strong> 快速添加
-                  </span>
-                  <button
-                    type="button"
-                    className="clear-all-btn"
-                    onClick={clearAll}
-                    disabled={todos.length === 0}
-                  >
-                    <span className="icon">🗑</span>
-                    清空
-                  </button>
-                </div>
+                <button
+                  type="button"
+                  className="clear-all-btn"
+                  onClick={clearAll}
+                  disabled={todos.length === 0}
+                >
+                  <span className="icon">🗑</span>
+                  清空
+                </button>
               </div>
 
               <div className="divider" />
