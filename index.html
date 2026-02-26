@@ -214,11 +214,18 @@
         background: rgba(239, 246, 255, 0.9);
         color: #1d4ed8;
         font-weight: 500;
+        white-space: nowrap;
       }
 
       .stat-pill.secondary {
         background: rgba(226, 232, 240, 0.9);
         color: #4b5563;
+      }
+
+      .stats-right {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
       }
 
       .hint {
@@ -537,7 +544,9 @@
         }
 
         .app-shell {
-          max-width: 100%;
+          width: 90vw;
+          max-width: 90vw;
+          margin: 0 auto;
         }
 
         .card {
@@ -572,6 +581,15 @@
 
         .list {
           max-height: calc(100vh - 260px);
+        }
+
+        .stats {
+          align-items: flex-start;
+        }
+
+        .stats-right {
+          width: 100%;
+          justify-content: flex-end;
         }
 
         .todo-actions {
@@ -787,15 +805,20 @@
                     未完成 {stats.uncompleted}
                   </span>
                 </div>
-                <button
-                  type="button"
-                  className="clear-all-btn"
-                  onClick={clearAll}
-                  disabled={todos.length === 0}
-                >
-                  <span className="icon">🗑</span>
-                  清空
-                </button>
+                <div className="stats-right">
+                  <span className="hint" aria-hidden="true">
+                    &nbsp;
+                  </span>
+                  <button
+                    type="button"
+                    className="clear-all-btn"
+                    onClick={clearAll}
+                    disabled={todos.length === 0}
+                  >
+                    <span className="icon">🗑</span>
+                    清空
+                  </button>
+                </div>
               </div>
 
               <div className="divider" />
